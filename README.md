@@ -1,4 +1,4 @@
-# Airflow Docker Test
+# Airflow Celery Docker
 
 This repository is primarily used for local development. It runs Apache Airflow with the Celery Executor using Docker Compose.
 
@@ -35,12 +35,15 @@ Some directories in the container are mounted, which means that their contents a
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/nukima/airflow-docker-test.git
-    cd airflow-docker-test
+    git clone https://github.com/nukima/airflow-celery-docker.git
+    cd airflow-celery-docker
     ```
 
 2. Start the Airflow services:
     ```sh
+    # run database migrations and create first user account
+    docker compose up airflow-init
+    # start the services
     docker compose --profile flower up
     ```
 
@@ -58,7 +61,7 @@ You can configure Airflow by modifying the `airflow.cfg` file located in the `co
 
 To stop the Airflow services, run:
 ```sh
-docker-compose down
+docker compose down --volumes --remove-orphans
 ```
 
 ## Contributing
