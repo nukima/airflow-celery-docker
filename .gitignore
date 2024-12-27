@@ -102,7 +102,7 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
+# .env
 .venv
 env/
 venv/
@@ -139,10 +139,10 @@ cython_debug/
 *.pid
 *.seed
 *.pid.lock
-.env
-docker-compose.yml
-docker-compose.override.yml
-.dockerignore
+# .env
+# docker-compose.yml
+# docker-compose.override.yml
+# .dockerignore
 
 # VS Code
 .vscode/
